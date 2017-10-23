@@ -486,7 +486,7 @@ namespace app1
                         string qestid = pg.Substring(pg.IndexOf("qsetID=") + 8);
                         qestid = qestid.Substring(0, qestid.IndexOf('"'));
                         ll = ll + ",\"cmi#interactions." + (i + 1).ToString() + ".learner_record\":\"[]\",\"cmi.interactions." + i.ToString() + ".description\":\"Activity Data\",\"cmi.interactions." + i.ToString() + ".type\":\"other\",\"cmi.interactions." + i.ToString() + ".id\":\"" + qestid + "\",";
-                        ll = ll + "\"cmi.interactions." + i.ToString() + ".learner_response\":\"" + qestid + ";2:1:false";
+                        ll = ll + "\"cmi.interactions." + i.ToString() + ".learner_response\":\"" + qestid + ";2:1:false:43:2";
 
                         string a = pg.Substring(pg.IndexOf("questionId"));
                         a = a.Substring(a.IndexOf('[') + 1);

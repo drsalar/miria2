@@ -28,3 +28,19 @@ D:\xx\miria\app1\obj\Debug\app1.csproj.GenerateResource.Cache
 D:\xx\miria\app1\obj\Debug\app1.csproj.CoreCompileInputs.cache
 D:\xx\miria\app1\obj\Debug\app1.exe
 D:\xx\miria\app1\obj\Debug\app1.pdb
+D:\xx\miria - 副本\app1\bin\Debug\app1.exe.config
+D:\xx\miria - 副本\app1\bin\Debug\app1.exe
+D:\xx\miria - 副本\app1\bin\Debug\app1.pdb
+D:\xx\miria - 副本\app1\bin\Debug\HtmlAgilityPack.dll
+D:\xx\miria - 副本\app1\bin\Debug\Newtonsoft.Json.dll
+D:\xx\miria - 副本\app1\bin\Debug\HtmlAgilityPack.pdb
+D:\xx\miria - 副本\app1\bin\Debug\HtmlAgilityPack.xml
+D:\xx\miria - 副本\app1\bin\Debug\Newtonsoft.Json.xml
+D:\xx\miria - 副本\app1\obj\Debug\app1.csprojResolveAssemblyReference.cache
+D:\xx\miria - 副本\app1\obj\Debug\app1.LoginForm.resources
+D:\xx\miria - 副本\app1\obj\Debug\app1.Form1.resources
+D:\xx\miria - 副本\app1\obj\Debug\app1.Properties.Resources.resources
+D:\xx\miria - 副本\app1\obj\Debug\app1.csproj.GenerateResource.Cache
+D:\xx\miria - 副本\app1\obj\Debug\app1.csproj.CoreCompileInputs.cache
+D:\xx\miria - 副本\app1\obj\Debug\app1.exe
+D:\xx\miria - 副本\app1\obj\Debug\app1.pdb
