@@ -58,7 +58,7 @@ namespace app1
             this.dataGridView1.Rows[i].Cells[0].Value = this.user;
             this.dataGridView1.Rows[i].Cells[1].Value = this.username;
             this.dataGridView1.Rows[i].Cells[2].Value = "等待中";
-            Control.CheckForIllegalCrossThreadCalls = false;
+            //Control.CheckForIllegalCrossThreadCalls = false;
             this.loadCourses();
         }
 
@@ -766,12 +766,17 @@ namespace app1
                 this.log = this.log + "\r\n" + "执行以下选中内容：" + this.currentRows;
                 this.logTB.Text = this.log;
 
-                Thread t1 = new Thread(lalala);
+                Thread t1 = new Thread(new ThreadStart(tslalala));
                 t1.Start();
             }
+        }
 
+        private delegate void xsxsx();
 
-
+        public void tslalala()
+        {
+            xsxsx xaa = new xsxsx(lalala);
+            this.Invoke(xaa);
         }
 
         public void lalala()
