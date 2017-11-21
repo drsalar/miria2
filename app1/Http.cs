@@ -27,41 +27,48 @@ namespace app1
             StreamWriter writer = new StreamWriter(request.GetRequestStream(), Encoding.ASCII);
             writer.Write(postDataStr);
             writer.Flush();
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            if (response.StatusCode != HttpStatusCode.OK)
+            try
             {
-                return response.StatusCode.ToString();
-            }
-            string encoding = response.ContentEncoding;
-            if (encoding == null || encoding.Length < 1)
-            {
-                encoding = "UTF-8"; //默认编码 
-            }
-
-            string[] cookies = response.Headers.GetValues("Set-Cookie");
-            if (cookies != null && cookies.Length > 0)
-            {
-                foreach (string cookie in cookies)
+                HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+                if (response.StatusCode != HttpStatusCode.OK)
                 {
-                    string[] cs = cookie.Split(';');
-                    foreach (string ca in cs)
+                    return response.StatusCode.ToString();
+                }
+                string encoding = response.ContentEncoding;
+                if (encoding == null || encoding.Length < 1)
+                {
+                    encoding = "UTF-8"; //默认编码 
+                }
+
+                string[] cookies = response.Headers.GetValues("Set-Cookie");
+                if (cookies != null && cookies.Length > 0)
+                {
+                    foreach (string cookie in cookies)
                     {
-                        string[] kv = ca.Split('=');
-                        if (kv.Length == 2)
+                        string[] cs = cookie.Split(';');
+                        foreach (string ca in cs)
                         {
-                            Cookie c = new Cookie(kv[0].TrimStart(' '), kv[1], "/", "english.ulearning.cn");
-                            if (cc == null)
+                            string[] kv = ca.Split('=');
+                            if (kv.Length == 2)
                             {
-                                cc = new CookieContainer();
+                                Cookie c = new Cookie(kv[0].TrimStart(' '), kv[1], "/", "english.ulearning.cn");
+                                if (cc == null)
+                                {
+                                    cc = new CookieContainer();
+                                }
+                                cc.Add(c);
                             }
-                            cc.Add(c);
                         }
                     }
                 }
+                StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding(encoding));
+                string retString = reader.ReadToEnd();
+                return retString;
             }
-            StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding(encoding));
-            string retString = reader.ReadToEnd();
-            return retString;
+            catch
+            {
+                return "";
+            }
         }
 
         public static string HttpGet(string Url)

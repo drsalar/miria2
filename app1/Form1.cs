@@ -66,15 +66,24 @@ namespace app1
         {
             string postDataStr = "loginname=" + Http.user + "&password=" + Http.pwd;
 
-            string req = Http.HttpPost("http://english.ulearning.cn/login/checkUserForLogin.do", postDataStr);
-            char res = req.Split(':')[1][0];
+            //string req = Http.HttpPost("http://english.ulearning.cn/login/checkUserForLogin.do", postDataStr);
+            //char res = req.Split(':')[1][0];
+            //if (res == '0')
+            //{
+            //    return false;
+            //}
+            //postDataStr = "name=" + Http.user + "&passwd=" + Http.pwd + "&requestUrl=english.ulearning.cn";
+            //req = Http.HttpPost("http://english.ulearning.cn/umooc/user/login.do", postDataStr);
+            //Http.findname(req);
+            string req = Http.HttpPost("http://www.ulearning.cn/ulearning_web/login!checkUserForLogin.do", postDataStr);
+            char res = req[0];
             if (res == '0')
             {
                 return false;
             }
-            postDataStr = "name=" + Http.user + "&passwd=" + Http.pwd + "&requestUrl=english.ulearning.cn";
-            req = Http.HttpPost("http://english.ulearning.cn/umooc/user/login.do", postDataStr);
-            Http.findname(req);
+            postDataStr = "name=" + Http.user + "&passwd=" + Http.pwd;
+            req = Http.HttpPost("http://www.ulearning.cn/umooc/user/login.do", postDataStr);
+            //Http.findname(req);
             return true;
         }
     }

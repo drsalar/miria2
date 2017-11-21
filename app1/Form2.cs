@@ -248,7 +248,7 @@ namespace app1
         public void loadCourses()
         {
             string postdata = "operation=catalog&lang=zh&catalogID=0&year=0";
-            string req = Http.HttpPost("http://english.ulearning.cn/umooc/learner/study.do?operation=catalog&lang=zh", postdata);
+            string req = Http.HttpPost("http://www.ulearning.cn/umooc/learner/study.do?operation=catalog&lang=zh", postdata);
 
             var doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(req);
