@@ -83,6 +83,10 @@ namespace app1
             }
             postDataStr = "name=" + Http.user + "&passwd=" + Http.pwd;
             req = Http.HttpPost("http://www.ulearning.cn/umooc/user/login.do", postDataStr);
+            if (req != "")
+            {
+                Http.findname(req);
+            }
             //Http.findname(req);
             return true;
         }

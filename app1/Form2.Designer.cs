@@ -28,34 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.account = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.logTB = new System.Windows.Forms.TextBox();
-            this.startBt = new System.Windows.Forms.Button();
-            this.timeL = new System.Windows.Forms.Label();
-            this.timeTB = new System.Windows.Forms.TextBox();
-            this.stopBt = new System.Windows.Forms.Button();
             this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.u1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.u2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.u3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.u4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.u5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.u6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.ch1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ch2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ch3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +61,16 @@
             this.ch8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ch9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ch10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logTB = new System.Windows.Forms.TextBox();
+            this.startBt = new System.Windows.Forms.Button();
+            this.timeL = new System.Windows.Forms.Label();
+            this.timeTB = new System.Windows.Forms.TextBox();
+            this.stopBt = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.minTB = new System.Windows.Forms.TextBox();
+            this.maxTB = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -79,14 +84,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.account,
@@ -129,14 +134,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.c1,
@@ -155,127 +160,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(879, 120);
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.u1,
-            this.u2,
-            this.u3,
-            this.u4,
-            this.u5,
-            this.u6});
-            this.dataGridView3.Location = new System.Drawing.Point(26, 279);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersVisible = false;
-            this.dataGridView3.RowTemplate.Height = 23;
-            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(879, 130);
-            this.dataGridView3.TabIndex = 2;
-            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ch1,
-            this.ch2,
-            this.ch3,
-            this.ch4,
-            this.ch5,
-            this.ch6,
-            this.ch7,
-            this.ch8,
-            this.ch9,
-            this.ch10});
-            this.dataGridView4.Location = new System.Drawing.Point(26, 432);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowHeadersVisible = false;
-            this.dataGridView4.RowTemplate.Height = 23;
-            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView4.Size = new System.Drawing.Size(879, 130);
-            this.dataGridView4.TabIndex = 3;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
-            // 
-            // logTB
-            // 
-            this.logTB.Location = new System.Drawing.Point(26, 580);
-            this.logTB.Multiline = true;
-            this.logTB.Name = "logTB";
-            this.logTB.ReadOnly = true;
-            this.logTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.logTB.Size = new System.Drawing.Size(879, 81);
-            this.logTB.TabIndex = 4;
-            this.logTB.TextChanged += new System.EventHandler(this.logTB_TextChanged);
-            // 
-            // startBt
-            // 
-            this.startBt.Location = new System.Drawing.Point(616, 688);
-            this.startBt.Name = "startBt";
-            this.startBt.Size = new System.Drawing.Size(75, 23);
-            this.startBt.TabIndex = 5;
-            this.startBt.Text = "开始答题";
-            this.startBt.UseVisualStyleBackColor = true;
-            this.startBt.Click += new System.EventHandler(this.startBt_Click);
-            // 
-            // timeL
-            // 
-            this.timeL.AutoSize = true;
-            this.timeL.Location = new System.Drawing.Point(68, 693);
-            this.timeL.Name = "timeL";
-            this.timeL.Size = new System.Drawing.Size(185, 12);
-            this.timeL.TabIndex = 6;
-            this.timeL.Text = "设置单元挂学时时长(单位，分钟)";
-            // 
-            // timeTB
-            // 
-            this.timeTB.Location = new System.Drawing.Point(268, 690);
-            this.timeTB.Name = "timeTB";
-            this.timeTB.Size = new System.Drawing.Size(68, 21);
-            this.timeTB.TabIndex = 7;
-            this.timeTB.Text = "4";
-            this.timeTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // stopBt
-            // 
-            this.stopBt.Location = new System.Drawing.Point(446, 688);
-            this.stopBt.Name = "stopBt";
-            this.stopBt.Size = new System.Drawing.Size(75, 23);
-            this.stopBt.TabIndex = 8;
-            this.stopBt.Text = "开始挂学时";
-            this.stopBt.UseVisualStyleBackColor = true;
-            this.stopBt.Click += new System.EventHandler(this.stopBt_Click);
             // 
             // c1
             // 
@@ -316,6 +200,40 @@
             this.c6.ReadOnly = true;
             this.c6.Visible = false;
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView3.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView3.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.u1,
+            this.u2,
+            this.u3,
+            this.u4,
+            this.u5,
+            this.u6});
+            this.dataGridView3.Location = new System.Drawing.Point(26, 279);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.RowTemplate.Height = 23;
+            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView3.Size = new System.Drawing.Size(879, 130);
+            this.dataGridView3.TabIndex = 2;
+            this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
+            // 
             // u1
             // 
             this.u1.HeaderText = "单元";
@@ -354,6 +272,44 @@
             this.u6.Name = "u6";
             this.u6.ReadOnly = true;
             this.u6.Visible = false;
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.AllowUserToDeleteRows = false;
+            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ch1,
+            this.ch2,
+            this.ch3,
+            this.ch4,
+            this.ch5,
+            this.ch6,
+            this.ch7,
+            this.ch8,
+            this.ch9,
+            this.ch10});
+            this.dataGridView4.Location = new System.Drawing.Point(26, 432);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.ReadOnly = true;
+            this.dataGridView4.RowHeadersVisible = false;
+            this.dataGridView4.RowTemplate.Height = 23;
+            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView4.Size = new System.Drawing.Size(879, 130);
+            this.dataGridView4.TabIndex = 3;
+            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
             // ch1
             // 
@@ -436,11 +392,107 @@
             this.ch10.ReadOnly = true;
             this.ch10.Visible = false;
             // 
+            // logTB
+            // 
+            this.logTB.Location = new System.Drawing.Point(26, 580);
+            this.logTB.Multiline = true;
+            this.logTB.Name = "logTB";
+            this.logTB.ReadOnly = true;
+            this.logTB.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.logTB.Size = new System.Drawing.Size(879, 81);
+            this.logTB.TabIndex = 4;
+            this.logTB.TextChanged += new System.EventHandler(this.logTB_TextChanged);
+            // 
+            // startBt
+            // 
+            this.startBt.Location = new System.Drawing.Point(456, 690);
+            this.startBt.Name = "startBt";
+            this.startBt.Size = new System.Drawing.Size(75, 23);
+            this.startBt.TabIndex = 5;
+            this.startBt.Text = "开始答题";
+            this.startBt.UseVisualStyleBackColor = true;
+            this.startBt.Click += new System.EventHandler(this.startBt_Click);
+            // 
+            // timeL
+            // 
+            this.timeL.AutoSize = true;
+            this.timeL.Location = new System.Drawing.Point(68, 693);
+            this.timeL.Name = "timeL";
+            this.timeL.Size = new System.Drawing.Size(185, 12);
+            this.timeL.TabIndex = 6;
+            this.timeL.Text = "设置单元挂学时时长(单位，分钟)";
+            // 
+            // timeTB
+            // 
+            this.timeTB.Location = new System.Drawing.Point(268, 690);
+            this.timeTB.Name = "timeTB";
+            this.timeTB.Size = new System.Drawing.Size(68, 21);
+            this.timeTB.TabIndex = 7;
+            this.timeTB.Text = "4";
+            this.timeTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // stopBt
+            // 
+            this.stopBt.Location = new System.Drawing.Point(358, 690);
+            this.stopBt.Name = "stopBt";
+            this.stopBt.Size = new System.Drawing.Size(75, 23);
+            this.stopBt.TabIndex = 8;
+            this.stopBt.Text = "开始挂学时";
+            this.stopBt.UseVisualStyleBackColor = true;
+            this.stopBt.Click += new System.EventHandler(this.stopBt_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(560, 690);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "随机挂学时";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(655, 695);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "最小值";
+            // 
+            // minTB
+            // 
+            this.minTB.Location = new System.Drawing.Point(714, 690);
+            this.minTB.Name = "minTB";
+            this.minTB.Size = new System.Drawing.Size(39, 21);
+            this.minTB.TabIndex = 11;
+            // 
+            // maxTB
+            // 
+            this.maxTB.Location = new System.Drawing.Point(840, 690);
+            this.maxTB.Name = "maxTB";
+            this.maxTB.Size = new System.Drawing.Size(40, 21);
+            this.maxTB.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(780, 695);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "最大值";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(939, 738);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.maxTB);
+            this.Controls.Add(this.minTB);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.stopBt);
             this.Controls.Add(this.timeTB);
             this.Controls.Add(this.timeL);
@@ -499,5 +551,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ch8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ch9;
         private System.Windows.Forms.DataGridViewTextBoxColumn ch10;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox minTB;
+        private System.Windows.Forms.TextBox maxTB;
+        private System.Windows.Forms.Label label2;
     }
 }

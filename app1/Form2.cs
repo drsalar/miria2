@@ -444,7 +444,7 @@ namespace app1
             string homepage = prlink.Substring(prlink.LastIndexOf('/'));
             string prlink2 = prlink.Substring(0, prlink.LastIndexOf('/'));
 
-            this.initandcontent(prlink2);
+            string courseData = this.initandcontent(prlink2);
 
             string req = this.cmipoxy(itemId, nodeId, lession, "Initialize", "");
             string sst = req.Substring(req.IndexOf("systime") + 9);
@@ -557,7 +557,10 @@ namespace app1
                             }
                             else if (types[z] == "ti" || types[z] == "es")
                             {
-                                qq = qq + ";" + questionId[z] + ":" + questionId[z] + "_0" + ":1";
+                                string ans = courseData.Substring(courseData.IndexOf(questionId[z]));
+                                ans = ans.Substring(ans.IndexOf("\",\"") + 3);
+                                ans = ans.Substring(0, ans.IndexOf("\","));
+                                qq = qq + ";" + questionId[z] + ":" + ans + ":1";
                             }
                         }
 
@@ -683,10 +686,12 @@ namespace app1
             return Http.HttpGet(this.domain + link);
         }
 
-        public void initandcontent(string prlink)
+        public string initandcontent(string prlink)
         {
             string req = Http.HttpGet(this.domain + prlink + "/shared/common/init.htm");
             req = Http.HttpGet(this.domain + prlink + "/shared/common/content.htm");
+            req = Http.HttpGet(this.domain + prlink + "/shared/js/metadata/coursedata.js");
+            return req;
         }
 
         public string cmipoxy(string itemID, string nodeID, string lession, string key, string data)
@@ -936,7 +941,7 @@ namespace app1
             this.heartbeat();
 
             string landingdata = this.landing(link);
-            string startpage = landingdata.Substring(landingdata.IndexOf("startpage = ") + 13);
+            string startpage = landingdata.Substring(landingdata.LastIndexOf("startpage = ") + 13);
             startpage = startpage.Substring(0, startpage.IndexOf('\''));
 
             string prlink = link.Substring(0, link.IndexOf('?'));
@@ -954,6 +959,245 @@ namespace app1
             int ct = int.Parse(this.st);
             int et = ct;
             et -= 60 * times;
+            string data = "{\"cmi.learner_name\":\"" + this.username + "\",\"cmi.learner_id\":\"" + this.userID + "\",\"cmi.activity_title\":\"" + lession + "\",\"ulms.node_id\":" + nodeId + ",\"ulms.item_id\":" + itemId + ",\"startStudyTime\":" + this.st + ",\"systime\":" + et.ToString() + ",\"cmi.location\":\"" + startpage + "\",\"ulms.customized\":0,\"cmi.exit\":\"suspend\"}";
+            //for (int i = 0; i < times && this.ssss; i++)
+            //{
+            //    string pg = this.loadpage(prlink + "/" + startpage, "");
+            //    ct += 30 * i;
+            //    string cts = ct.ToString() + "234";
+            //    this.loadpage(prlink + "/" + startpage, "_=" + cts);
+
+            //}
+
+            this.cmipoxy(itemId, nodeId, lession, "Terminate", data);
+            this.log = this.log + "完成";
+            this.logTB.Text = this.log;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.studying)
+            {
+                this.studying = false;
+                this.ssss = false;
+                this.dataGridView1.Rows[0].Cells[2].Value = "等待中";
+                this.button1.Text = "随机挂学时";
+                this.button1.Enabled = false;
+                //this.dataGridView2.Enabled = true;
+                //this.dataGridView3.Enabled = true;
+                //this.dataGridView4.Enabled = true;
+                this.log = this.log + "\r\n" + "正在停止挂学时......";
+                this.logTB.Text = this.log;
+            }
+            else
+            {
+                this.studying = true;
+                this.ssss = true;
+                this.dataGridView1.Rows[0].Cells[2].Value = "挂学时中";
+                this.button1.Text = "停止挂学时";
+                this.dataGridView2.Enabled = false;
+                this.dataGridView3.Enabled = false;
+                this.dataGridView4.Enabled = false;
+                if (this.log == "")
+                {
+                    this.log = this.currentRows;
+                }
+                else
+                {
+                    this.log = this.log + "\r\n" + "当前选中的内容是：" + this.currentRows;
+                }
+                this.log = this.log + "\r\n" + "执行以下选中内容：" + this.currentRows;
+                this.logTB.Text = this.log;
+
+                Thread t1 = new Thread(new ThreadStart(tslalala2));
+                t1.Start();
+            }
+        }
+
+        public void tslalala2()
+        {
+            xsxsx xaa = new xsxsx(lalala2);
+            this.Invoke(xaa);
+        }
+
+        public void lalala2()
+        {
+            int times = int.Parse(this.timeTB.Text);
+            if (this.current == 4)
+            {
+                var rows = this.dataGridView4.SelectedRows;
+                foreach (DataGridViewRow row in rows)
+                {
+                    string link = row.Cells[7].Value.ToString();
+                    string itemId = row.Cells[8].Value.ToString();
+                    string nodeId = row.Cells[9].Value.ToString();
+                    string lession = row.Cells[0].Value.ToString();
+                    string pn = row.Cells[2].Value.ToString();
+                    if (this.ssss)
+                    {
+                        this.lululu2(itemId, nodeId, link, lession, pn, times);
+                        //this.studyLession(itemId, nodeId, link, lession, pn, true);
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+            else if (this.current == 3)
+            {
+                DataGridViewSelectedRowCollection rows = this.dataGridView3.SelectedRows;
+                foreach (DataGridViewRow row in rows)
+                {
+                    string chapter = row.Cells[0].Value.ToString();
+                    string data = row.Cells[5].Value.ToString();
+                    string url = this.domain + this.genLessionUrl(data);
+                    this.loadLessions(url);
+
+                    this.log = this.log + "\r\n" + "章节：" + chapter;
+                    this.logTB.Text = this.log;
+                    int tttt = times;
+                    if (chapter[0] != 'A' && chapter[0] != 'B' && chapter[0] != 'C')
+                    {
+                        tttt *= 1;
+                    }
+                    foreach (DataGridViewRow row2 in this.dataGridView4.Rows)
+                    {
+                        if (row2.Index == this.dataGridView4.RowCount - 1)
+                        {
+                            break;
+                        }
+                        string link = row2.Cells[7].Value.ToString();
+                        string itemId = row2.Cells[8].Value.ToString();
+                        string nodeId = row2.Cells[9].Value.ToString();
+                        string lession = row2.Cells[0].Value.ToString();
+                        string pn = row2.Cells[2].Value.ToString();
+                        if (this.ssss)
+                        {
+                            this.lululu2(itemId, nodeId, link, lession, pn, tttt);
+                            //this.studyLession(itemId, nodeId, link, lession, pn, true);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+                    if (!this.ssss)
+                    {
+                        break;
+                    }
+                    this.log = this.log + "\r\n" + "章节：" + chapter + " ······完成";
+                    this.logTB.Text = this.log;
+                }
+            }
+            else if (this.current == 2)
+            {
+                var rows = this.dataGridView2.SelectedRows;
+                foreach (DataGridViewRow row in rows)
+                {
+                    string course = row.Cells[0].Value.ToString();
+                    string url = this.domain + row.Cells[5].Value.ToString();
+
+                    this.log = this.log + "\r\n" + "课程：" + course;
+                    this.logTB.Text = this.log;
+
+                    this.loadChapters(url);
+
+                    DataGridViewRowCollection rows3 = this.dataGridView3.Rows;
+                    foreach (DataGridViewRow row2 in rows3)
+                    {
+                        if (row2.Index == this.dataGridView3.RowCount - 1)
+                        {
+                            break;
+                        }
+                        string chapter = row2.Cells[0].Value.ToString();
+                        string data = row2.Cells[5].Value.ToString();
+                        string url2 = this.domain + this.genLessionUrl(data);
+                        this.loadLessions(url2);
+
+                        this.log = this.log + "\r\n" + "章节：" + chapter;
+                        this.logTB.Text = this.log;
+                        int tttt = times;
+                        if (chapter[0] != 'A' && chapter[0] != 'B' && chapter[0] != 'C')
+                        {
+                            tttt *= 1;
+                        }
+                        foreach (DataGridViewRow row4 in this.dataGridView4.Rows)
+                        {
+                            if (row4.Index == this.dataGridView4.RowCount - 1)
+                            {
+                                break;
+                            }
+                            string link = row4.Cells[7].Value.ToString();
+                            string itemId = row4.Cells[8].Value.ToString();
+                            string nodeId = row4.Cells[9].Value.ToString();
+                            string lession = row4.Cells[0].Value.ToString();
+                            string pn = row4.Cells[2].Value.ToString();
+                            if (this.ssss)
+                            {
+                                this.lululu2(itemId, nodeId, link, lession, pn, tttt);
+                                //this.studyLession(itemId, nodeId, link, lession, pn, true);
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        if (!this.ssss)
+                        {
+                            break;
+                        }
+                        this.log = this.log + "\r\n" + "章节：" + chapter + " ······完成";
+                        this.logTB.Text = this.log;
+                    }
+                    if (!this.ssss)
+                    {
+                        break;
+                    }
+                    this.log = this.log + "\r\n" + "课程：" + course + " ······完成";
+                    this.logTB.Text = this.log;
+                }
+            }
+            this.studying = false;
+            this.ssss = false;
+            this.dataGridView2.Enabled = true;
+            this.dataGridView3.Enabled = true;
+            this.dataGridView4.Enabled = true;
+            this.dataGridView1.Rows[0].Cells[2].Value = "等待中";
+            this.log = this.log + "\r\n" + "完成挂学时";
+            this.logTB.Text = this.log;
+            this.button1.Text = "随机挂学时";
+            this.button1.Enabled = true;
+        }
+
+        public void lululu2(string itemId, string nodeId, string link, string lession, string pn, int times)
+        {
+            this.log = this.log + "\r\n" + "开始挂学时：" + lession + "......";
+            this.logTB.Text = this.log;
+            this.heartbeat();
+
+            string landingdata = this.landing(link);
+            string startpage = landingdata.Substring(landingdata.LastIndexOf("startpage = ") + 13);
+            startpage = startpage.Substring(0, startpage.IndexOf('\''));
+
+            string prlink = link.Substring(0, link.IndexOf('?'));
+            prlink = prlink.Substring(0, prlink.LastIndexOf('/'));
+            string homepage = prlink.Substring(prlink.LastIndexOf('/'));
+            string prlink2 = prlink.Substring(0, prlink.LastIndexOf('/'));
+
+            this.initandcontent(prlink2);
+
+            string req = this.cmipoxy(itemId, nodeId, lession, "Initialize", "");
+            string sst = req.Substring(req.IndexOf("systime") + 9);
+            sst = sst.Substring(0, 10);
+            this.startStudyTime = sst;
+            this.st = sst;
+            int ct = int.Parse(this.st);
+            int et = ct;
+            int min = int.Parse(this.minTB.Text)*60;
+            int max = int.Parse(this.maxTB.Text)*60;
+            Random r = new Random();
+            et -= r.Next(min,max);
             string data = "{\"cmi.learner_name\":\"" + this.username + "\",\"cmi.learner_id\":\"" + this.userID + "\",\"cmi.activity_title\":\"" + lession + "\",\"ulms.node_id\":" + nodeId + ",\"ulms.item_id\":" + itemId + ",\"startStudyTime\":" + this.st + ",\"systime\":" + et.ToString() + ",\"cmi.location\":\"" + startpage + "\",\"ulms.customized\":0,\"cmi.exit\":\"suspend\"}";
             //for (int i = 0; i < times && this.ssss; i++)
             //{
